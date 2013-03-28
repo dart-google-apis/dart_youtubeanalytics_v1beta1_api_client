@@ -8,22 +8,24 @@ class ReportsResource extends Resource {
   /**
    * Retrieve your YouTube Analytics reports.
    *
-   * [ids] - Unique channel or content owner ID for retrieving YouTube Analytics data. Either channel==C or contentOwner==O where 'C' is the encrypted channel ID and 'O' is the content owner name.
+   * [ids] - Identifies the YouTube channel or content owner for which you are retrieving YouTube Analytics data.
+- To request data for a YouTube user, set the ids parameter value to channel==CHANNEL_ID, where CHANNEL_ID specifies the unique YouTube channel ID.
+- To request data for a YouTube CMS content owner, set the ids parameter value to contentOwner==OWNER_NAME, where OWNER_NAME is the CMS name of the content owner.
    *
-   * [start_date] - Start date for fetching YouTube Analytics data. All requests should specify a start date formatted as YYYY-MM-DD.
+   * [start_date] - The start date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
    *
-   * [end_date] - End date for fetching YouTube Analytics data. All requests should specify an end date formatted as YYYY-MM-DD.
+   * [end_date] - The end date for fetching YouTube Analytics data. The value should be in YYYY-MM-DD format.
    *
-   * [metrics] - A comma-separated list of YouTube Analytics metrics. E.g., 'views' or 'likes,dislikes'
+   * [metrics] - A comma-separated list of YouTube Analytics metrics, such as views or likes,dislikes. See the Available Reports document for a list of the reports that you can retrieve and the metrics available in each report, and see the Metrics document for definitions of those metrics.
    *
-   * [dimensions] - A comma-separated list of YouTube Analytics dimensions. E.g., 'video', or 'ageGroup,gender'.
+   * [dimensions] - A comma-separated list of YouTube Analytics dimensions, such as views or ageGroup,gender. See the Available Reports document for a list of the reports that you can retrieve and the dimensions used for those reports. Also see the Dimensions document for definitions of those dimensions.
    *
-   * [filters] - A list of dimension filters to be applied to YouTube Analytics data. Multiple filters can be joined together with the ';' character. The returned result table will satisfy both filters. E.g., video==dMH0bHeiRNg;country==IT will restrict the returned stats to the given video and the country Italy.
+   * [filters] - A list of filters that should be applied when retrieving YouTube Analytics data. The Available Reports document identifies the dimensions that can be used to filter each report, and the Dimensions document defines those dimensions. If a request uses multiple filters, join them together with a semicolon (;), and the returned result table will satisfy both filters. For example, a filters parameter value of video==dMH0bHeiRNg;country==IT restricts the result set to include data for the given video in Italy.
    *
    * [max_results] - The maximum number of rows to include in the response.
    *   Minimum: 1
    *
-   * [sort] - A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending, '-' prefix causes descending sort order.
+   * [sort] - A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending. The '-' prefix causes descending sort order.
    *
    * [start_index] - An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter (one-based, inclusive).
    *   Minimum: 1

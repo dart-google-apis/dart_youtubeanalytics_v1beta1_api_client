@@ -3,10 +3,10 @@ part of youtubeanalytics_v1beta1_api_client;
 /** Contains a single result table. The table is returned as an array of rows that contain the values for the cells of the table. Depending on the metric or dimension, the cell can contain a string (video ID, country code) or a number (number of views or number of likes). */
 class ResultTable {
 
-  /** Contains information about the columns returned in the "rows" fields. The order of the elements matches the order of the corresponding columns in "rows" field. */
+  /** This value specifies information about the data returned in the rows fields. Each item in the columnHeaders list identifies a field returned in the rows value, which contains a list of comma-delimited data. The columnHeaders list will begin with the dimensions specified in the API request, which will be followed by the metrics specified in the API request. The order of both dimensions and metrics will match the ordering in the API request. For example, if the API request contains the parameters dimensions=ageGroup,gender&metrics=viewerPercentage, the API response will return columns in this order: ageGroup,gender,viewerPercentage. */
   List<ResultTableColumnHeaders> columnHeaders;
 
-  /** Identifier used to mark the structure as a result table. */
+  /** This value specifies the type of data included in the API response. For the query method, the kind property value will be youtubeAnalytics#resultTable. */
   String kind;
 
   /** Create new ResultTable from JSON data */
@@ -46,10 +46,10 @@ class ResultTable {
 
 class ResultTableColumnHeaders {
 
-  /** The type of the column (DIMENSION, METRIC). */
+  /** The type of the column (DIMENSION or METRIC). */
   String columnType;
 
-  /** Type of the data in the column (STRING, INTEGER, FLOAT). */
+  /** The type of the data in the column (STRING, INTEGER, FLOAT, etc.). */
   String dataType;
 
   /** The name of the dimension or metric. */

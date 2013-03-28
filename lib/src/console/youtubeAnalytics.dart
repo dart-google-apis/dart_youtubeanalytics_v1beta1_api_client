@@ -7,6 +7,9 @@ class YoutubeAnalytics extends ConsoleClient {
   ReportsResource _reports;
   ReportsResource get reports => _reports;
 
+  /** OAuth Scope2: View YouTube Analytics monetary reports for your YouTube content */
+  static const String YT_ANALYTICS_MONETARY_READONLY_SCOPE = "https://www.googleapis.com/auth/yt-analytics-monetary.readonly";
+
   /** OAuth Scope2: View YouTube Analytics reports for your YouTube content */
   static const String YT_ANALYTICS_READONLY_SCOPE = "https://www.googleapis.com/auth/yt-analytics.readonly";
 
