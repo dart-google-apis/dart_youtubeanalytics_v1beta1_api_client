@@ -32,13 +32,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ResultTable> query(String ids, String start_date, String end_date, String metrics, {String dimensions, String filters, int max_results, String sort, int start_index, Map optParams}) {
-    var completer = new Completer();
+  async.Future<ResultTable> query(core.String ids, core.String start_date, core.String end_date, core.String metrics, {core.String dimensions, core.String filters, core.int max_results, core.String sort, core.int start_index, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "reports";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (dimensions != null) queryParams["dimensions"] = dimensions;
     if (end_date == null) paramErrors.add("end_date is required");
     if (end_date != null) queryParams["end-date"] = end_date;
