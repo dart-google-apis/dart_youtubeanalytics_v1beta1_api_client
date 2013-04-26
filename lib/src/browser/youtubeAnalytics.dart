@@ -4,8 +4,8 @@ part of youtubeanalytics_v1beta1_api_browser;
 /** Retrieve your YouTube Analytics reports. */
 class YoutubeAnalytics extends BrowserClient {
 
-  ReportsResource _reports;
-  ReportsResource get reports => _reports;
+  ReportsResource_ _reports;
+  ReportsResource_ get reports => _reports;
 
   /** OAuth Scope2: View YouTube Analytics monetary reports for your YouTube content */
   static const core.String YT_ANALYTICS_MONETARY_READONLY_SCOPE = "https://www.googleapis.com/auth/yt-analytics-monetary.readonly";
@@ -65,6 +65,6 @@ class YoutubeAnalytics extends BrowserClient {
   YoutubeAnalytics([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/youtube/analytics/v1beta1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _reports = new ReportsResource(this);
+    _reports = new ReportsResource_(this);
   }
 }

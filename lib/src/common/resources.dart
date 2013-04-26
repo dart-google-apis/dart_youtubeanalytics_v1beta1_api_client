@@ -1,8 +1,8 @@
 part of youtubeanalytics_v1beta1_api_client;
 
-class ReportsResource extends Resource {
+class ReportsResource_ extends Resource {
 
-  ReportsResource(Client client) : super(client) {
+  ReportsResource_(Client client) : super(client) {
   }
 
   /**
@@ -61,7 +61,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
