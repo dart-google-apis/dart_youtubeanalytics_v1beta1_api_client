@@ -64,7 +64,7 @@ class YoutubeAnalytics extends ConsoleClient {
 
   YoutubeAnalytics([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/youtube/analytics/v1beta1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _reports = new ReportsResource_(this);
   }
 }
