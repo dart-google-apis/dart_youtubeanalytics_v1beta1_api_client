@@ -1,4 +1,4 @@
-part of youtubeanalytics_v1beta1_api_client;
+part of youtubeanalytics_v1beta1_api;
 
 /** Contains a single result table. The table is returned as an array of rows that contain the values for the cells of the table. Depending on the metric or dimension, the cell can contain a string (video ID, country code) or a number (number of views or number of likes). */
 class ResultTable {
@@ -9,16 +9,19 @@ class ResultTable {
   /** This value specifies the type of data included in the API response. For the query method, the kind property value will be youtubeAnalytics#resultTable. */
   core.String kind;
 
+  /** The list contains all rows of the result table. Each item in the list is an array that contains comma-delimited data corresponding to a single row of data. The order of the comma-delimited data fields will match the order of the columns listed in the columnHeaders field. If no data is available for the given query, the rows element will be omitted from the response. The response for a query with the day dimension will not contain rows for the most recent days. */
+  core.List<core.List<core.Object>> rows;
+
   /** Create new ResultTable from JSON data */
   ResultTable.fromJson(core.Map json) {
     if (json.containsKey("columnHeaders")) {
-      columnHeaders = [];
-      json["columnHeaders"].forEach((item) {
-        columnHeaders.add(new ResultTableColumnHeaders.fromJson(item));
-      });
+      columnHeaders = json["columnHeaders"].map((columnHeadersItem) => new ResultTableColumnHeaders.fromJson(columnHeadersItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
+    }
+    if (json.containsKey("rows")) {
+      rows = json["rows"].map((rowsItem) => rowsItem.toList()).toList();
     }
   }
 
@@ -27,13 +30,13 @@ class ResultTable {
     var output = new core.Map();
 
     if (columnHeaders != null) {
-      output["columnHeaders"] = new core.List();
-      columnHeaders.forEach((item) {
-        output["columnHeaders"].add(item.toJson());
-      });
+      output["columnHeaders"] = columnHeaders.map((columnHeadersItem) => columnHeadersItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
+    }
+    if (rows != null) {
+      output["rows"] = rows.map((rowsItem) => rowsItem.toList()).toList();
     }
 
     return output;
@@ -90,3 +93,16 @@ class ResultTableColumnHeaders {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

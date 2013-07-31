@@ -1,9 +1,11 @@
-part of youtubeanalytics_v1beta1_api_client;
+part of youtubeanalytics_v1beta1_api;
 
-class ReportsResource_ extends Resource {
+class ReportsResource_ {
 
-  ReportsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ReportsResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieve your YouTube Analytics reports.
