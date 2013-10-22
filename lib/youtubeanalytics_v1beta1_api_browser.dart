@@ -2,7 +2,7 @@ library youtubeanalytics_v1beta1_api.browser;
 
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-import 'package:google_youtubeanalytics_v1beta1_api/src/cloud_api_browser.dart';
+import 'package:google_youtubeanalytics_v1beta1_api/src/browser_client.dart';
 import "package:google_youtubeanalytics_v1beta1_api/youtubeanalytics_v1beta1_api_client.dart";
 
 /** Retrieve your YouTube Analytics reports. */

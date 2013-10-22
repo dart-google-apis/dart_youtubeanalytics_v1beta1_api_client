@@ -43,7 +43,7 @@ class ResultTable {
   }
 
   /** Return String representation of ResultTable */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -89,7 +89,7 @@ class ResultTableColumnHeaders {
   }
 
   /** Return String representation of ResultTableColumnHeaders */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
