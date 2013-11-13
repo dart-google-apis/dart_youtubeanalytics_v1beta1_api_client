@@ -14,7 +14,7 @@ Adding dependency to pubspec.yaml
 
 ```
   dependencies:
-    google_youtubeanalytics_v1beta1_api: '>=0.4.10'
+    google_youtubeanalytics_v1beta1_api: '>=0.4.11'
 ```
 
 For web applications:
@@ -29,13 +29,13 @@ For console application:
   import "package:google_youtubeanalytics_v1beta1_api/youtubeanalytics_v1beta1_api_console.dart" as youtubeanalyticsclient;
 ```
 
-Working with out authentication the following constructor can be called:
+Working without authentication the following constructor can be called:
 
 ```
   var youtubeanalytics = new youtubeanalyticsclient.YoutubeAnalytics();
 ```
 
-Working with authentication then create a new `GoogleOAuth2` object and pass it to the constructor:
+To use authentication create a new `GoogleOAuth2` object and pass it to the constructor:
 
 
 ```
