@@ -8,6 +8,8 @@ abstract class Client extends ClientBase {
   // Resources
   //
 
+  BatchReportDefinitionsResource_ get batchReportDefinitions => new BatchReportDefinitionsResource_(this);
+  BatchReportsResource_ get batchReports => new BatchReportsResource_(this);
   ReportsResource_ get reports => new ReportsResource_(this);
 
   //

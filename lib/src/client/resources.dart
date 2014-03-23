@@ -1,5 +1,91 @@
 part of youtubeanalytics_v1beta1_api;
 
+class BatchReportDefinitionsResource_ {
+
+  final Client _client;
+
+  BatchReportDefinitionsResource_(Client client) :
+      _client = client;
+
+  /**
+   * Retrieves a list of available batch report definitions.
+   *
+   * [onBehalfOfContentOwner] - The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of.
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<BatchReportDefinitionList> list(core.String onBehalfOfContentOwner, {core.Map optParams}) {
+    var url = "batchReportDefinitions";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (onBehalfOfContentOwner == null) paramErrors.add("onBehalfOfContentOwner is required");
+    if (onBehalfOfContentOwner != null) queryParams["onBehalfOfContentOwner"] = onBehalfOfContentOwner;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      throw new core.ArgumentError(paramErrors.join(" / "));
+    }
+
+    var response;
+    response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
+    return response
+      .then((data) => new BatchReportDefinitionList.fromJson(data));
+  }
+}
+
+class BatchReportsResource_ {
+
+  final Client _client;
+
+  BatchReportsResource_(Client client) :
+      _client = client;
+
+  /**
+   * Retrieves a list of processed batch reports.
+   *
+   * [batchReportDefinitionId] - The batchReportDefinitionId parameter specifies the ID of the batch reportort definition for which you are retrieving reports.
+   *
+   * [onBehalfOfContentOwner] - The onBehalfOfContentOwner parameter identifies the content owner that the user is acting on behalf of.
+   *
+   * [optParams] - Additional query parameters
+   */
+  async.Future<BatchReportList> list(core.String batchReportDefinitionId, core.String onBehalfOfContentOwner, {core.Map optParams}) {
+    var url = "batchReports";
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
+
+    var paramErrors = new core.List();
+    if (batchReportDefinitionId == null) paramErrors.add("batchReportDefinitionId is required");
+    if (batchReportDefinitionId != null) queryParams["batchReportDefinitionId"] = batchReportDefinitionId;
+    if (onBehalfOfContentOwner == null) paramErrors.add("onBehalfOfContentOwner is required");
+    if (onBehalfOfContentOwner != null) queryParams["onBehalfOfContentOwner"] = onBehalfOfContentOwner;
+    if (optParams != null) {
+      optParams.forEach((key, value) {
+        if (value != null && queryParams[key] == null) {
+          queryParams[key] = value;
+        }
+      });
+    }
+
+    if (!paramErrors.isEmpty) {
+      throw new core.ArgumentError(paramErrors.join(" / "));
+    }
+
+    var response;
+    response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
+    return response
+      .then((data) => new BatchReportList.fromJson(data));
+  }
+}
+
 class ReportsResource_ {
 
   final Client _client;
