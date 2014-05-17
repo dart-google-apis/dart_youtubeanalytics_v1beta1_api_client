@@ -14,7 +14,7 @@ Adding dependency to pubspec.yaml
 
 ```
   dependencies:
-    google_youtubeanalytics_v1beta1_api: '>=0.4.12'
+    google_youtubeanalytics_v1beta1_api: '>=0.4.13'
 ```
 
 For web applications:
