@@ -7,6 +7,7 @@ import 'package:google_youtubeanalytics_v1beta1_api/src/console_client.dart';
 import "package:google_youtubeanalytics_v1beta1_api/youtubeanalytics_v1beta1_api_client.dart";
 
 /** Retrieve your YouTube Analytics reports. */
+@deprecated
 class YoutubeAnalytics extends Client with ConsoleClient {
 
   /** OAuth Scope2: View YouTube Analytics monetary reports for your YouTube content */
